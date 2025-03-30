@@ -1,4 +1,12 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
 # OpenManus二次开发指南
+
+## 关键能力提升维护
+你每次遇到问题修复后，必须将刚才的问题维护到[项目核心知识管理.md]中，依次来提高你代码的准确率
 
 ## 项目概览
 OpenManus是一个开源的通用AI代理框架，允许创建具有多种工具能力的智能代理。它支持浏览器自动化、Python代码执行、文件操作、命令行交互和MCP(Model Context Protocol)连接等功能。
