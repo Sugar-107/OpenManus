@@ -10,7 +10,6 @@ from typing import Any, Dict, Optional
 
 from mcp.server.fastmcp import FastMCP
 
-
 # Add directories to Python path (needed for proper importing)
 current_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(current_dir)
@@ -28,6 +27,7 @@ logger = logging.getLogger("mcp-server")
 from app.tool.base import BaseTool
 from app.tool.bash import Bash
 from app.tool.browser_use_tool import BrowserUseTool
+from app.tool.mysql import MySQLTool
 from app.tool.str_replace_editor import StrReplaceEditor
 from app.tool.terminate import Terminate
 
@@ -43,6 +43,7 @@ class MCPServer:
         self.tools["bash"] = Bash()
         self.tools["browser"] = BrowserUseTool()
         self.tools["editor"] = StrReplaceEditor()
+        self.tools["mysql"] = MySQLTool()
         self.tools["terminate"] = Terminate()
 
         from app.logger import logger as app_logger
