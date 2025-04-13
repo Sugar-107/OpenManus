@@ -10,7 +10,6 @@ from app.prompt.toolcall import NEXT_STEP_PROMPT, SYSTEM_PROMPT
 from app.schema import TOOL_CHOICE_TYPE, AgentState, Message, ToolCall, ToolChoice
 from app.tool import CreateChatCompletion, Terminate, ToolCollection
 
-
 TOOL_CALL_REQUIRED = "Tool calls required but none provided"
 
 
@@ -42,7 +41,7 @@ class ToolCallAgent(ReActAgent):
             self.messages += [user_msg]
 
         try:
-            # Get response with tool options
+            # Get response with tool options,这里根据模型的能力，会导致返回的参数不同，是正常的
             response = await self.llm.ask_tool(
                 messages=self.messages,
                 system_msgs=(
